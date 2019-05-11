@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Mission to Mars</h1>
+    <div>
+      <ul style="list-style: none;">
+          <li>{{ news }}</li>
+          <li>{{ weather }}</li>
+          <li>{{ featured_image_url }}</li>
+          <li>{{ facts }}</li>
+          <li>{{ hemisphere_image_urls }}</li>
+      </ul>
+    </div>
+            {%for k in hemisphere_image_urls%}
+            <li>{{ k.title }}: {{ k.img_url }}</li>
+            <a class="thumbnail"  href="{{ k.img_url }}">{{ k.img_url }} </a>
+            <img class="first image" width = "20%" src= {{ k.img_url }} alt="first image" >
+          {% endfor %}
+  
+    </div>
+    <br>
+    <br>
+
+    <table style="width:100%">
+            <tr>
+              <th></th>
+              <th>Value</th> 
+            </tr>
+            <tr>
+              <td>{{facts}}</td> 
+            </tr>
+          </table>
+
+  </div>
+</body>
+
+</html>
